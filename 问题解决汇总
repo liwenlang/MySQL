@@ -1,0 +1,22 @@
+1.在CMD命令行中切换到管理员权限模式？
+直接搜索栏输入CMD后（不要立即回车进入），按住CTRL+SHIFT+ENTER键可直接进入管理员模式命令行。
+
+2.mysql' 不是内部或外部命令,也不是可运行的程序 或批处理文件
+解决方法：1、win+r-->services.msc-->右击mysql服务-->属性-->找到可执行路径并复制出来
+　　　　　2、右击“我的电脑”-->属性-->高级系统设置-->环境变量-->系统变量-->PATH-->新增-->上面的“可执行路径”
+          定位到你的 MYSQL安装目录之后再找到bin目录， 如： C:\Program Files\MySQL\MySQL Server 5.5\bin
+
+3.在MySQL登录时出现Access denied for user 'root'@'localhost' (using password: YES) 拒绝访问，并可修改MySQL密码
+在5x版本下
+  https://blog.csdn.net/qq_36675754/article/details/81381341
+  MySQL修改用户密码的方法及命令
+  https://blog.csdn.net/sitebus/article/details/96111179
+  
+ 在8版本下：
+ 在MySQL5.7中用户表的密码已转换为authentication_string。
+ password（）加密函数已经在8.0.11中移除了，可以使用MD5（）函数代替
+ 
+ mysql8.0版本在配置文件my.ini[mysqld]加上skip-grant-tables后无法启动
+ 解决方法：https://www.cnblogs.com/wangkun122/articles/11280481.html
+ 
+  
